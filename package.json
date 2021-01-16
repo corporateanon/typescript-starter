@@ -1,7 +1,12 @@
 {
     "name": "babel-typescript-sample",
     "version": "0.7.2",
-    "license": "MIT",
+    "license": "WTFPL",
+    "main": "lib/main.js",
+    "types": "lib/main.d.ts",
+    "files": [
+        "lib"
+    ],
     "scripts": {
         "type-check": "tsc --noEmit",
         "type-check:watch": "npm run type-check -- --watch",
@@ -9,19 +14,21 @@
         "build:types": "tsc --emitDeclarationOnly",
         "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
         "lint": "eslint .",
-        "test": "jest"
+        "test": "jest",
+        "start": "node lib/cli.js"
     },
     "devDependencies": {
-        "@types/jest": "^24.0.15",
-        "jest": "^24.8.0",
         "@babel/cli": "^7.8.3",
         "@babel/core": "^7.8.3",
+        "@babel/helper-compilation-targets": "^7.12.5",
         "@babel/plugin-proposal-class-properties": "^7.8.3",
         "@babel/preset-env": "^7.8.3",
         "@babel/preset-typescript": "^7.8.3",
-        "typescript": "^3.7.5",
+        "@types/jest": "^24.0.15",
         "@typescript-eslint/eslint-plugin": "^4.10.0",
         "@typescript-eslint/parser": "^4.10.0",
-        "eslint": "^7.16.0"
+        "eslint": "^7.16.0",
+        "jest": "^24.8.0",
+        "typescript": "^3.7.5"
     }
 }
